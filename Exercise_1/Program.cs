@@ -1,5 +1,7 @@
 ﻿namespace Exercise_1
 {
+
+
     public abstract class Vehicle
     {
         
@@ -58,11 +60,18 @@
 
 
 
+
     internal class Program
     {
         static void Main(string[] args)
         {
-            
+            List<Vehicle> transportList = new List<Vehicle>
+                {
+                  new Car("Tesla", 150),
+                  new Bicycle("Giant", 25),
+                  new Airplane("Boeing", 900),
+                
+                };
         }
     }
 }
