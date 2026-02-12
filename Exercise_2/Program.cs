@@ -3,7 +3,6 @@
 namespace Exercise_2
 {
 
-
     public abstract class SpaceBody
     {
         public string Name { get; set; }
@@ -63,15 +62,32 @@ namespace Exercise_2
         }
     }
 
-
-
-
-
     internal class Program
     {
         static void Main(string[] args)
         {
-           
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.InputEncoding = Encoding.UTF8;
+
+
+            List<SpaceBody> solarSystem = new List<SpaceBody>
+            {
+                new Planet("Марс", 1.52),
+                new Asteroid("Церера", 2.77),
+                new Comet("Галлея", 0.58, 0.967),
+                new Planet("Юпітер", 5.20)
+            };
+
+            Console.WriteLine("--- Аналіз орбіт космічних об'єктів ---");
+
+
+            foreach (var body in solarSystem)
+            {
+                body.CalculateOrbitParameters();
+            }
+
+            Console.WriteLine("\nРозрахунок завершено.");
+            Console.ReadKey();
         }
     }
 }
